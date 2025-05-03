@@ -1,9 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>marketos.com</title>
-</head>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #3a0ca3, #7209b7);
+      color: #ffffff;
+      overflow: hidden;
+      text-align: center;
+    }
 
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.2em;
+    }
+
+    p {
+      font-size: 1.3em;
+      margin-top: 0;
+      opacity: 0.9;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 12px 24px;
+      font-size: 1em;
+      background-color: #f72585;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #d61d6c;
+    }
+
+    .floaty {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.15;
+      animation: float 12s infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-25px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
 <body>
+  <h1>marketos.com</h1>
+  <p>The internet’s most important domain.</p>
+
+
+  <script>
+    // Add floating circles
+    for (let i = 0; i < 15; i++) {
+      const circle = document.createElement('div');
+      circle.classList.add('floaty');
+      const size = Math.random() * 40 + 10;
+      circle.style.width = size + 'px';
+      circle.style.height = size + 'px';
+      circle.style.background = '#ffffff';
+      circle.style.left = Math.random() * 100 + '%';
+      circle.style.top = Math.random() * 100 + '%';
+      circle.style.animationDuration = (8 + Math.random() * 5) + 's';
+      document.body.appendChild(circle);
+    }
+  </script>
 </body>
 </html>
+
